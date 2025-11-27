@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teori Interaksi King - SehatKu</title>
+    <link rel="icon" type="icon/png" href="icon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F766E',   /* Teal-700 */
+                        secondary: '#4F46E5', /* Indigo-600 */
+                        accent: '#F472B6',    /* Pink-400 */
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        /* Smooth Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col pt-24">
+
+    <header class="bg-gradient-to-r from-primary to-secondary text-white fixed w-full top-0 left-0 z-50 shadow-lg"
+        data-aos="fade-down" data-aos-duration="900">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2 hover:opacity-90 transition">
+                    <span class="text-3xl">💙</span>
+                    <span class="text-2xl font-bold">SehatKu</span>
+                </a>
+
+                <ul class="hidden md:flex space-x-8 font-semibold">
+                    <li><a href="index.html" target="_blank" class="hover:text-indigo-200 transition">Beranda</a></li>
+                    <li><a href="#" class="text-indigo-200 border-b-2 border-indigo-200">Teori King</a></li>
+                    <li><a href="aboutme.html" target="_blank" class="hover:text-indigo-200 transition">About Me</a>
+                    </li>
+                    <li><a href="#kontak" class="hover:text-indigo-200 transition">Contact Me</a></li>
+                </ul>
+
+                <button class="md:hidden text-2xl focus:outline-none" onclick="toggleMenu()">☰</button>
+            </div>
+
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-indigo-400 pt-4">
+                <ul class="space-y-3 font-semibold">
+                    <li><a href="index.html" target="_blank"
+                            class="block hover:bg-white/10 p-2 rounded transition">Beranda</a></li>
+                    <li><a href="#" class="block bg-white/20 p-2 rounded transition">Teori King</a></li>
+                    <li><a href="aboutme.html" target="_blank"
+                            class="block hover:bg-white/10 p-2 rounded transition">About Me</a></li>
+                    <li><a href="#kontak" class="block hover:bg-white/10 p-2 rounded transition">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="container mx-auto px-6 mb-12 text-center" data-aos="fade-up">
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+            Identifikasi Masalah Berbasis <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Teori King</span>
+        </h1>
+        <p class="text-slate-600 max-w-2xl mx-auto">
+            Imogene King menekankan pada pencapaian tujuan (Goal Attainment) melalui interaksi.
+            Dalam kesehatan reproduksi, kita melihat dari 3 sistem utama: Personal, Interpersonal, dan Sosial.
+        </p>
+    </section>
+
+    <main class="container mx-auto px-6 flex-grow pb-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden group border border-teal-100"
+                data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-teal-50 p-6 flex justify-center items-center h-40 group-hover:bg-teal-100 transition">
+                    <span class="text-6xl">🧘</span>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-primary mb-2">1. Sistem Personal</h3>
+                    <p class="text-sm font-semibold text-slate-400 mb-4 uppercase tracking-wider">Individu & Persepsi
+                    </p>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                        Fokus pada bagaimana remaja memandang dirinya sendiri (Body Image), pertumbuhan, dan persepsi
+                        terhadap perubahan fisik saat pubertas.
+                    </p>
+
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-accent mr-2">✓</span> Pengetahuan Pubertas
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-accent mr-2">✓</span> Citra Tubuh (Body Image)
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-accent mr-2">✓</span> Kebersihan Diri (Higiene)
+                        </li>
+                    </ul>
+                    <a href="#personal-detail"
+                        class="block text-center bg-teal-600 text-white py-2 rounded-lg hover:bg-teal-700 transition text-sm font-bold">Pelajari
+                        Detail</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden group border border-indigo-100"
+                data-aos="fade-up" data-aos-delay="200">
+                <div
+                    class="bg-indigo-50 p-6 flex justify-center items-center h-40 group-hover:bg-indigo-100 transition">
+                    <span class="text-6xl">🗣️</span>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-secondary mb-2">2. Sistem Interpersonal</h3>
+                    <p class="text-sm font-semibold text-slate-400 mb-4 uppercase tracking-wider">Interaksi & Komunikasi
+                    </p>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                        Fokus pada interaksi remaja dengan orang lain (teman sebaya, orang tua, pacar), komunikasi,
+                        peran, dan manajemen stres dalam hubungan.
+                    </p>
+
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-accent mr-2">✓</span> Hubungan Teman Sebaya
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-accent mr-2">✓</span> Pergaulan Bebas vs Sehat
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-accent mr-2">✓</span> Konsep Persetujuan (Consent)
+                        </li>
+                    </ul>
+                    <a href="#interpersonal-detail"
+                        class="block text-center bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition text-sm font-bold">Pelajari
+                        Detail</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden group border border-pink-100"
+                data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-pink-50 p-6 flex justify-center items-center h-40 group-hover:bg-pink-100 transition">
+                    <span class="text-6xl">🏥</span>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-accent mb-2">3. Sistem Sosial</h3>
+                    <p class="text-sm font-semibold text-slate-400 mb-4 uppercase tracking-wider">Lingkungan & Akses</p>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                        Fokus pada peran remaja dalam masyarakat, akses ke layanan kesehatan, norma budaya, dan
+                        pengambilan keputusan di lingkungan luas.
+                    </p>
+
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-accent mr-2">✓</span> Akses Layanan Kesehatan
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-accent mr-2">✓</span> Mitos & Fakta di Masyarakat
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-accent mr-2">✓</span> Edukasi Sekolah & Keluarga
+                        </li>
+                    </ul>
+                    <a href="#social-detail"
+                        class="block text-center bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600 transition text-sm font-bold">Pelajari
+                        Detail</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-16 bg-white rounded-3xl p-8 md:p-12 shadow-xl border-l-8 border-primary relative overflow-hidden"
+            data-aos="zoom-in">
+            <div
+                class="absolute top-0 right-0 w-64 h-64 bg-teal-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob">
+            </div>
+            <div class="relative z-10">
+                <h2 class="text-2xl font-bold text-slate-800 mb-4">🎯 Pencapaian Tujuan (Goal Attainment)</h2>
+                <p class="text-slate-600 mb-6">
+                    Dalam teori King, kesehatan tercapai jika terjadi <strong>Transaksi</strong> yang efektif. Ini
+                    berarti:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-indigo-100 p-3 rounded-full text-indigo-600 text-xl font-bold">1</div>
+                        <div>
+                            <h4 class="font-bold text-slate-700">Persepsi yang Sama</h4>
+                            <p class="text-sm text-slate-500">Remaja dan tenaga kesehatan/orang tua memiliki pemahaman
+                                yang sama tentang masalah (misal: pentingnya kebersihan).</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-teal-100 p-3 rounded-full text-teal-600 text-xl font-bold">2</div>
+                        <div>
+                            <h4 class="font-bold text-slate-700">Kesepakatan Tujuan</h4>
+                            <p class="text-sm text-slate-500">Adanya persetujuan bersama untuk melakukan tindakan sehat
+                                (misal: rutin ganti pembalut, menolak seks bebas).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 space-y-12">
+
+            <div id="personal-detail" class="scroll-mt-24">
+                <h3 class="text-2xl font-bold text-primary mb-4 border-b pb-2">Detail Sistem Personal</h3>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <p class="text-slate-600">Sistem ini berkaitan dengan pemahaman individu terhadap dirinya sendiri.
+                        Dalam KRR, hal ini meliputi:</p>
+                    <ul class="list-disc list-inside mt-4 text-slate-700 space-y-2 marker:text-primary">
+                        <li><strong>Pertumbuhan & Perkembangan:</strong> Memahami perubahan fisik (menstruasi, mimpi
+                            basah).</li>
+                        <li><strong>Self Image:</strong> Menerima bentuk tubuh sendiri dengan positif.</li>
+                        <li><strong>Ruang:</strong> Menjaga privasi area reproduksi (tidak boleh disentuh sembarangan).
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="interpersonal-detail" class="scroll-mt-24">
+                <h3 class="text-2xl font-bold text-secondary mb-4 border-b pb-2">Detail Sistem Interpersonal</h3>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <p class="text-slate-600">Sistem ini terbentuk ketika dua individu atau lebih berinteraksi. Dalam
+                        KRR, hal ini meliputi:</p>
+                    <ul class="list-disc list-inside mt-4 text-slate-700 space-y-2 marker:text-secondary">
+                        <li><strong>Interaksi:</strong> Bagaimana remaja bergaul dengan lawan jenis.</li>
+                        <li><strong>Komunikasi:</strong> Keterbukaan bicara masalah kespro dengan orang tua.</li>
+                        <li><strong>Stress:</strong> Tekanan teman sebaya (peer pressure) untuk melakukan hal negatif.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="social-detail" class="scroll-mt-24">
+                <h3 class="text-2xl font-bold text-accent mb-4 border-b pb-2">Detail Sistem Sosial</h3>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <p class="text-slate-600">Sistem yang lebih luas dimana individu hidup dan tumbuh. Dalam KRR, hal
+                        ini meliputi:</p>
+                    <ul class="list-disc list-inside mt-4 text-slate-700 space-y-2 marker:text-accent">
+                        <li><strong>Otoritas & Kekuasaan:</strong> Peran guru dan hukum dalam melindungi remaja.</li>
+                        <li><strong>Pengambilan Keputusan:</strong> Kemampuan remaja memilih layanan kesehatan yang
+                            tepat (Puskesmas/Klinik).</li>
+                        <li><strong>Status:</strong> Posisi remaja dalam masyarakat sebagai agen perubahan.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer id="kontak" class="bg-gray-800 text-white py-12 px-6 w-full mt-auto">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-3xl">💙</span>
+                        <span class="text-2xl font-bold">SehatKu</span>
+                    </div>
+                    <p class="text-gray-400">Platform edukasi kesehatan reproduksi remaja terpercaya.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-indigo-400">Menu</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" target="_blank" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="#" class="hover:text-white transition">Teori King</a></li>
+                        <li><a href="quiz.html" target="_blank" class="hover:text-white transition">Quiz</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4 text-indigo-400">Kontak</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📱 +62 812-7494-7652</li>
+                        <li>📍 Medan, Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 SehatKu. All rights reserved. Made with 💙 for Indonesian Youth</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init();
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+
+</html>

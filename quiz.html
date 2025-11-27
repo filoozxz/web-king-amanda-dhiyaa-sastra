@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SehatKu - Edukasi Kespro Remaja</title>
+    <link rel="icon" type="icon/png" href="icon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F766E',   /* Teal-700 */
+                        secondary: '#4F46E5', /* Indigo-600 */
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-indigo-50 text-slate-800 min-h-screen flex flex-col items-center pt-24 pb-10 px-4">
+
+    <header class="bg-gradient-to-r from-primary to-secondary text-white fixed w-full top-0 left-0 z-50 shadow-lg"
+        data-aos="fade-down" data-aos-duration="900">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <span class="text-3xl">💙</span>
+                    <span class="text-2xl font-bold">SehatKu</span>
+                </div>
+                <ul class="hidden md:flex space-x-8 font-semibold">
+                    <li><a href="#beranda" target="_blank" class="hover:text-indigo-200 transition">Beranda</a></li>
+                    <li><a href="index.html#teori" target="_blank" class="hover:text-indigo-200 transition">Teori
+                            King</a></li>
+                    <li><a href="aboutme.html" target="_blank" class="hover:text-indigo-200 transition">About Me</a>
+                    </li>
+                    <li><a href="index.html#kontak" target="_blank" class="hover:text-indigo-200 transition">Contact
+                            Me</a></li>
+                </ul>
+                <button class="md:hidden text-2xl focus:outline-none" onclick="toggleMenu()">☰</button>
+            </div>
+
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-indigo-400 pt-4">
+                <ul class="space-y-3 font-semibold">
+                    <li><a href="#beranda" target="_blank"
+                            class="block hover:bg-white/10 p-2 rounded transition">Beranda</a></li>
+                    <li><a href="index.html#teori" target="_blank"
+                            class="block hover:bg-white/10 p-2 rounded transition">Teori King</a></li>
+                    <li><a href="aboutme.html" target="_blank"
+                            class="block hover:bg-white/10 p-2 rounded transition">About Me</a></li>
+                    <li><a href="index.html#kontak" target="_blank"
+                            class="block hover:bg-white/10 p-2 rounded transition">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="beranda"
+        class="bg-white w-full max-w-xl rounded-2xl shadow-2xl overflow-hidden relative border border-indigo-100 mt-6"
+        data-aos="fade-up" data-aos-duration="1000">
+
+        <div class="bg-indigo-600 p-6 text-center text-white relative overflow-hidden">
+            <div class="relative z-10">
+                <h1 class="text-2xl font-bold">Kuis Kespro Remaja</h1>
+                <p class="text-indigo-100 text-sm mt-1">Cerdas, Sehat, dan Bertanggung Jawab</p>
+            </div>
+            <div
+                class="absolute top-0 left-0 w-24 h-24 bg-white opacity-10 rounded-full -translate-x-10 -translate-y-10">
+            </div>
+            <div
+                class="absolute bottom-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full translate-x-10 translate-y-10">
+            </div>
+        </div>
+
+        <div class="w-full bg-gray-200 h-2">
+            <div id="progress-bar" class="bg-pink-500 h-2 transition-all duration-500 ease-out" style="width: 0%"></div>
+        </div>
+
+        <div id="quiz-screen" class="p-6 md:p-8">
+            <div class="mb-6">
+                <div class="flex justify-between items-center mb-2">
+                    <span id="question-number"
+                        class="text-xs font-bold text-indigo-600 uppercase tracking-wider bg-indigo-100 px-2 py-1 rounded">Soal
+                        1/15</span>
+                    <span class="text-xs text-slate-400 font-semibold">Pilih satu jawaban</span>
+                </div>
+                <h2 id="question-text" class="text-xl md:text-2xl font-bold text-slate-800 leading-snug min-h-[4rem]">
+                    Memuat...</h2>
+            </div>
+            <div id="options-container" class="space-y-3">
+            </div>
+        </div>
+
+        <div id="result-screen" class="hidden p-6 md:p-8 text-center">
+            <h2 class="text-2xl font-bold text-slate-800 mb-2">Kuis Selesai!</h2>
+            <div
+                class="mx-auto w-36 h-36 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex flex-col items-center justify-center shadow-lg mb-6 ring-4 ring-indigo-100">
+                <span id="final-score" class="text-5xl font-bold">0</span>
+                <span class="text-xs opacity-80 mt-1">dari 15</span>
+            </div>
+            <p id="result-message" class="text-xl font-bold text-indigo-700 mb-2">Hebat!</p>
+            <div class="bg-indigo-50 border-l-4 border-indigo-500 text-left p-4 rounded-r-lg mb-6 shadow-sm">
+                <p class="text-xs font-bold text-indigo-500 uppercase mb-1">💡 Saran Untukmu</p>
+                <p id="advice-text" class="text-sm text-slate-700 leading-relaxed">Saran...</p>
+            </div>
+            <div class="text-left mb-6">
+                <h3 class="text-sm font-bold text-slate-400 uppercase mb-3 tracking-wide">Kunci Jawaban & Fakta</h3>
+                <div id="review-list" class="space-y-3 max-h-80 overflow-y-auto pr-2 custom-scrollbar">
+                </div>
+            </div>
+            <button onclick="restartQuiz()"
+                class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3.5 px-6 rounded-xl transition duration-300 shadow-lg">
+                Ulangi Kuis
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // --- 1. SCRIPT NAVBAR ---
+        // Inisialisasi AOS Animation
+        AOS.init();
+
+        // Fungsi Toggle Menu Mobile
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // --- 2. SCRIPT KUIS ---
+        const quizData = [
+            { q: "Apa tanda fisik utama pubertas pada remaja laki-laki?", options: ["Pinggul membesar", "Tumbuh jakun & suara memberat", "Menstruasi", "Kulit halus"], a: 1, exp: "Hormon testosteron memicu jakun dan suara memberat." },
+            { q: "Tanda awal pubertas pada remaja perempuan?", options: ["Tumbuh payudara", "Suara memberat", "Jakun", "Otot besar"], a: 0, exp: "Biasanya diawali pertumbuhan payudara." },
+            { q: "Apa itu menstruasi?", options: ["Luka dalam perut", "Penyakit", "Luruhnya dinding rahim", "Sakit biasa"], a: 2, exp: "Menstruasi adalah peluruhan dinding rahim karena tidak ada pembuahan." },
+            { q: "Berapa jam sekali ganti pembalut?", options: ["3-5 jam sekali", "Seharian", "Saat mandi saja", "24 jam"], a: 0, exp: "Ganti tiap 3-5 jam untuk mencegah bakteri." },
+            { q: "Apa itu 'Mimpi Basah'?", options: ["Mengompol", "Penyakit", "Ejakulasi alami saat tidur", "Melamun"], a: 2, exp: "Cara alami tubuh mengeluarkan kelebihan sperma." },
+            { q: "Penyebab jerawat saat remaja?", options: ["Kutukan", "Jarang cuci muka", "Hormon & minyak berlebih", "Tidur terus"], a: 2, exp: "Hormon androgen memicu produksi minyak berlebih." },
+            { q: "Apakah keputihan normal?", options: ["Tidak", "Normal jika bening & tak gatal", "Penyakit", "Bahaya"], a: 1, exp: "Normal untuk membersihkan vagina, asalkan tidak bau/gatal." },
+            { q: "Area Privat (aturan baju renang)?", options: ["Tangan", "Rambut", "Dada, Kelamin, Bokong", "Punggung"], a: 2, exp: "Bagian tertutup baju renang tidak boleh disentuh orang lain." },
+            { q: "Mitos salah tentang HIV?", options: ["Lewat jarum suntik", "Lewat seks", "Lewat salaman/pelukan", "Ibu ke bayi"], a: 2, exp: "HIV TIDAK menular lewat sentuhan kulit atau salaman." },
+            { q: "Fungsi Rahim?", options: ["Buang air", "Tempat janin tumbuh", "Buang kotoran", "Hasilkan telur"], a: 1, exp: "Rahim tempat bayi tumbuh selama kehamilan." },
+            { q: "Penyebab mood swing remaja?", options: ["Lapar", "Hormon tidak stabil", "Teman", "Cuaca"], a: 1, exp: "Fluktuasi hormon mempengaruhi emosi." },
+            { q: "Cara cebok perempuan yang benar?", options: ["Belakang ke depan", "Depan ke belakang", "Pakai sabun banyak", "Digosok kasar"], a: 1, exp: "Dari depan ke belakang agar kuman anus tidak masuk vagina." },
+            { q: "Manfaat sunat bagi laki-laki?", options: ["Tinggi badan", "Kebersihan & cegah infeksi", "Suara bagus", "Tidak ada"], a: 1, exp: "Memudahkan membersihkan penis dan mengurangi risiko infeksi." },
+            { q: "Mitos/Fakta: Pegangan tangan bikin hamil?", options: ["Fakta", "Mitos", "Mungkin", "Bisa jadi"], a: 1, exp: "MITOS. Hamil perlu pertemuan sperma dan sel telur dalam rahim." },
+            { q: "Jika bingung soal perubahan tubuh?", options: ["Diam saja", "Tanya orang asing", "Tanya ortu/guru/dokter", "Marah"], a: 2, exp: "Selalu tanya pada orang dewasa terpercaya." }
+        ];
+
+        let currentIdx = 0;
+        let score = 0;
+        let userHistory = [];
+
+        const ui = {
+            quizScreen: document.getElementById('quiz-screen'),
+            resultScreen: document.getElementById('result-screen'),
+            questionText: document.getElementById('question-text'),
+            questionNum: document.getElementById('question-number'),
+            optionsContainer: document.getElementById('options-container'),
+            progressBar: document.getElementById('progress-bar'),
+            finalScore: document.getElementById('final-score'),
+            resultMsg: document.getElementById('result-message'),
+            adviceText: document.getElementById('advice-text'),
+            reviewList: document.getElementById('review-list')
+        };
+
+        function loadQuestion() {
+            const data = quizData[currentIdx];
+            ui.questionNum.innerText = `SOAL ${currentIdx + 1} DARI ${quizData.length}`;
+            ui.questionText.innerText = data.q;
+            ui.progressBar.style.width = `${((currentIdx) / quizData.length) * 100}%`;
+            ui.optionsContainer.innerHTML = '';
+
+            data.options.forEach((opt, index) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-xl border-2 border-slate-100 bg-slate-50 hover:bg-indigo-50 hover:border-indigo-400 text-slate-700 font-semibold transition-all duration-200 active:scale-[0.98] shadow-sm text-sm md:text-base";
+                btn.innerText = opt;
+                btn.onclick = () => handleAnswer(index);
+                ui.optionsContainer.appendChild(btn);
+            });
+        }
+
+        function handleAnswer(idx) {
+            const data = quizData[currentIdx];
+            const isCorrect = idx === data.a;
+            if (isCorrect) score++;
+            userHistory.push({ q: data.q, user: data.options[idx], correct: data.options[data.a], isCorrect, exp: data.exp });
+            currentIdx++;
+            if (currentIdx < quizData.length) setTimeout(loadQuestion, 200);
+            else showResult();
+        }
+
+        function showResult() {
+            ui.quizScreen.classList.add('hidden');
+            ui.resultScreen.classList.remove('hidden');
+            ui.progressBar.style.width = '100%';
+            ui.finalScore.innerText = score;
+
+            const pct = (score / quizData.length) * 100;
+            if (pct === 100) { ui.resultMsg.innerText = "Sempurna!"; ui.adviceText.innerText = "Luar biasa! Pengetahuanmu sangat matang."; }
+            else if (pct >= 80) { ui.resultMsg.innerText = "Sangat Bagus!"; ui.adviceText.innerText = "Hampir sempurna, cek sedikit kesalahanmu di bawah."; }
+            else if (pct >= 50) { ui.resultMsg.innerText = "Cukup Baik"; ui.adviceText.innerText = "Sudah paham dasar, tapi perlu belajar lagi fakta-faktanya."; }
+            else { ui.resultMsg.innerText = "Ayo Belajar Lagi!"; ui.adviceText.innerText = "Baca pembahasan di bawah agar kamu tidak salah info lagi ya."; }
+
+            ui.reviewList.innerHTML = '';
+            userHistory.forEach((item, i) => {
+                const div = document.createElement('div');
+                div.className = "bg-slate-50 p-4 rounded-lg border border-slate-200 text-sm mb-3";
+                div.innerHTML = `
+                    <div class="flex justify-between mb-2"><strong class="text-indigo-600">Soal ${i + 1}</strong> ${item.isCorrect ? '✅' : '❌'}</div>
+                    <p class="mb-2 font-semibold">${item.q}</p>
+                    <p class="text-xs text-slate-500">Jawabanmu: <span class="${item.isCorrect ? 'text-green-600' : 'text-red-500'} font-bold">${item.user}</span></p>
+                    ${!item.isCorrect ? `<p class="text-xs text-slate-500">Benar: <span class="text-green-600 font-bold">${item.correct}</span></p>` : ''}
+                    <div class="mt-2 bg-blue-50 p-2 rounded text-xs italic text-slate-600">💡 ${item.exp}</div>
+                `;
+                ui.reviewList.appendChild(div);
+            });
+        }
+
+        function restartQuiz() {
+            currentIdx = 0; score = 0; userHistory = [];
+            ui.resultScreen.classList.add('hidden');
+            ui.quizScreen.classList.remove('hidden');
+            loadQuestion();
+        }
+
+        loadQuestion();
+    </script>
+</body>
+
+</html>

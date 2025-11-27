@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SehatKu - Edukasi Kesehatan Reproduksi Remaja</title>
+  <link rel="icon" type="icon/png" href="icon.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#667eea',
+            secondary: '#764ba2',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body class="font-sans">
+  <!-- Header & Navigation -->
+  <header class="bg-gradient-to-r from-primary to-secondary text-white fixed w-full top-0 z-50 shadow-lg"
+    data-aos="fade-down" data-aos-duration="900">
+    <nav class="container mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+          <span class="text-3xl">💙</span>
+          <span class="text-2xl font-bold">SehatKu</span>
+        </div>
+        <ul class="hidden md:flex space-x-8">
+          <li><a href="#beranda" class="hover:opacity-80 transition">Beranda</a></li>
+          <li><a href="#teori" class="hover:opacity-80 transition">Teori King</a></li>
+          <li><a href="aboutme.html" target="_blank" class="hover:opacity-80 transition">About Me</a></li>
+          <li><a href="#kontak" class="hover:opacity-80 transition">Contact Me</a></li>
+        </ul>
+        <button class="md:hidden text-2xl" onclick="toggleMenu()">☰</button>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4">
+        <ul class="space-y-3">
+          <li><a href="index.html" target="_blank" class="block hover:bg-white/10 p-2 rounded transition">Beranda</a>
+          </li>
+          <li><a href="index.html#teori" target="_blank" class="block hover:bg-white/10 p-2 rounded transition">Teori
+              King</a></li>
+          <li><a href="#" class="block bg-white/20 p-2 rounded transition">About Me</a></li>
+          <li><a href="#kontak" class="block hover:bg-white/10 p-2 rounded transition">Contact Me</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div id="daily-toast" class="fixed bottom-5 right-5 bg-white border-l-4 border-primary p-4 rounded shadow-lg flex items-start space-x-3 
+               transform transition-all duration-500 translate-y-full opacity-0 z-50 max-w-sm">
+    <div class="bg-primary/10 p-2 rounded-full text-primary">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    </div>
+    <div>
+      <h4 class="font-bold text-sm text-gray-800">Tips Harian! ✨</h4>
+      <p class="text-sm text-gray-600 mt-1">Tahukah kamu? Menjaga kebersihan area reproduksi setelah beraktivitas itu
+        wajib untuk mencegah infeksi!</p>
+    </div>
+    <button onclick="closeToast()" class="text-gray-400 hover:text-gray-600">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+
+  <script>
+    // 1. Fungsi untuk menampilkan toast
+    function showToast() {
+      const toast = document.getElementById('daily-toast');
+      if (!toast) return; // Guard clause jika elemen tidak ditemukan
+
+      // Menghapus kelas penyembunyi
+      toast.classList.remove('translate-y-full', 'opacity-0');
+
+      // Mengatur timer untuk menutup otomatis (10 detik)
+      setTimeout(() => {
+        closeToast();
+      }, 10000);
+    }
+
+    // 2. Fungsi untuk menyembunyikan toast
+    function closeToast() {
+      const toast = document.getElementById('daily-toast');
+      if (!toast) return;
+
+      // Menambahkan kelas penyembunyi
+      toast.classList.add('translate-y-full', 'opacity-0');
+    }
+
+    // 3. Pemicu Otomatis saat Halaman Selesai Dimuat
+    // Ini adalah bagian krusial yang mungkin hilang.
+    window.onload = function () {
+      // Tampilkan toast setelah jeda 3 detik (3000ms)
+      setTimeout(showToast, 3000);
+    };
+  </script>
+
+  <!-- Hero Section -->
+  <section id="beranda" class="bg-gradient-to-r from-primary to-secondary text-white pt-32 pb-20 px-6"
+    data-aos="fade-down" data-aos-duration="900">
+    <div class="container mx-auto text-center max-w-4xl" data-aos="fade-down" data-aos-duration="900">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
+        Edukasi Kesehatan Reproduksi Remaja Berbasis Teori Interaksi King
+      </h1>
+      <p class="text-xl mb-8 opacity-95">
+        Platform pembelajaran interaktif untuk meningkatkan pengetahuan dan kesadaran kesehatan reproduksi remaja
+        melalui pendekatan holistik
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="interact.html" target="_blank"
+          class="bg-white text-primary font-bold px-8 py-3 rounded-full hover:shadow-xl hover:-translate-y-1 transition transform">
+          Mulai Identifikasi
+        </a>
+        <a href="#teori"
+          class="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-primary transition">
+          Tentang Teori King
+        </a>
+        <a href="quiz.html" target="_blank"
+          class="bg-white text-primary font-bold px-8 py-3 rounded-full hover:shadow-xl hover:-translate-y-1 transition transform">
+          Mulai Quiz
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- King Theory Section -->
+  <section id="teori" class="py-20 px-6">
+    <div class="container mx-auto max-w-6xl" data-aos="fade-up" data-aos-duration="700">
+      <h2 class="text-4xl font-bold text-center mb-4">Teori Interaksi Imogene King</h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        Pendekatan pembelajaran kami didasarkan pada tiga sistem interaksi King untuk memahami kesehatan reproduksi
+        secara menyeluruh
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Sistem Personal -->
+        <div
+          class="bg-gradient-to-br from-purple-500 to-indigo-600 text-white p-8 rounded-2xl shadow-xl hover:-translate-y-3 transition transform">
+          <div class="text-5xl mb-4">👤</div>
+          <h3 class="text-2xl font-bold mb-4">Sistem Personal</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span>Pemahaman diri dan tubuh</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span>Persepsi kesehatan reproduksi</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span>Konsep diri positif</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span>Body image yang sehat</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Sistem Interpersonal -->
+        <div
+          class="bg-gradient-to-br from-pink-500 to-rose-600 text-white p-8 rounded-2xl shadow-xl hover:-translate-y-3 transition transform">
+          <div class="text-5xl mb-4">👥</div>
+          <h3 class="text-2xl font-bold mb-4">Sistem Interpersonal</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span>Komunikasi dengan orang tua</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span>Interaksi peer-to-peer</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span>Hubungan yang sehat</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span>Konseling profesional</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Sistem Sosial -->
+        <div
+          class="bg-gradient-to-br from-blue-500 to-cyan-600 text-white p-8 rounded-2xl shadow-xl hover:-translate-y-3 transition transform">
+          <div class="text-5xl mb-4">🌍</div>
+          <h3 class="text-2xl font-bold mb-4">Sistem Sosial</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span>Peran keluarga & sekolah</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span>Akses layanan kesehatan</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span>Dukungan komunitas</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span>Kebijakan kesehatan</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUKASI LENGKAP -->
+  <section class="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-10" data-aos="fade-up" data-aos-duration="800">
+
+    <!-- Pengertian -->
+    <div class="bg-white p-6 rounded-xl shadow-md transition duration-300 ease-in-out 
+            hover:scale-105 shadow-md hover:shadow-xl hover:bg-blue-100">
+      <h4 class="text-xl font-bold text-blue-700 mb-2">Pengertian</h4>
+      <p class="text-gray-700 leading-relaxed">
+        Kesehatan reproduksi remaja adalah kondisi sehat
+        secara fisik, mental, dan sosial yang berkaitan dengan fungsi serta proses reproduksi.
+        Remaja perlu memahami perubahan tubuh, cara menjaga kesehatan, serta risiko perilaku tidak sehat.
+      </p>
+    </div>
+
+    <!-- Resiko -->
+    <div class="bg-white p-6 rounded-xl shadow-md transition duration-300 ease-in-out 
+            hover:scale-105 shadow-md hover:shadow-xl hover:bg-blue-100">
+      <h4 class="text-xl font-bold text-blue-700 mb-2">Risiko</h4>
+      <ul class="text-gray-700 leading-relaxed list-disc pl-5">
+        <li>Seks pranikah tanpa pengetahuan</li>
+        <li>Kehamilan tidak direncanakan</li>
+        <li>Infeksi menular seksual (IMS)</li>
+        <li>Kekerasan seksual</li>
+        <li>Penyalahgunaan media pornografi</li>
+        <li>Perilaku pacaran berisiko</li>
+      </ul>
+    </div>
+
+    <!-- Cara Mencegah -->
+    <div class="bg-white p-6 rounded-xl shadow-md transition duration-300 ease-in-out 
+            hover:scale-105 shadow-md hover:shadow-xl hover:bg-blue-100">
+      <h4 class="text-xl font-bold text-blue-700 mb-2">Cara Mencegah</h4>
+      <ul class="text-gray-700 leading-relaxed list-disc pl-5">
+        <li>Menjaga batasan diri</li>
+        <li>Memahami risiko kehamilan dini</li>
+        <li>Tidak melakukan perilaku seksual berisiko</li>
+        <li>Edukasi dengan sumber terpercaya</li>
+        <li>Menjaga hubungan yang sehat</li>
+        <li>Konsultasi dengan tenaga kesehatan bila perlu</li>
+      </ul>
+    </div>
+
+    <!-- Manfaat -->
+    <div class="bg-white p-6 rounded-xl shadow-md transition duration-300 ease-in-out 
+            hover:scale-105 shadow-md hover:shadow-xl hover:bg-blue-100">
+      <h4 class="text-xl font-bold text-blue-700 mb-2">Manfaat</h4>
+      <ul class="text-gray-700 leading-relaxed list-disc pl-5">
+        <li>Mencegah penyakit</li>
+        <li>Memahami tubuh dan perubahan</li>
+        <li>Meningkatkan kebersihan</li>
+        <li>Meningkatkan kepercayaan diri dan kemandirian</li>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer id="kontak" class="bg-gray-800 text-white py-12 px-6">
+    <div class="container mx-auto max-w-6xl" data-aos="fade-up" data-aos-duration="700">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <span class="text-3xl">💙</span>
+            <span class="text-2xl font-bold">SehatKu</span>
+          </div>
+          <p class="text-gray-400">Platform edukasi kesehatan reproduksi remaja terpercaya</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">Menu</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#beranda" class="hover:opacity-80 transition">Beranda</a></li>
+            <li><a href="#teori" class="hover:opacity-80 transition">Teori King</a></li>
+            <li><a href="aboutme.html" target="_blank" class="hover:opacity-80 transition">About Me</a></li>
+            <li><a href="#kontak" class="hover:opacity-80 transition">Contact Me</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">Kontak</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li>📱 +62 812-7494-7652</li>
+            <li>📍 Medan, Indonesia</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2025 SehatKu. All rights reserved. Made with 💙 for Indonesian Youth</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Close mobile menu if open
+          document.getElementById('mobileMenu').classList.add('hidden');
+        }
+      });
+    });
+
+    // Add fade-in animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(20px)';
+      section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(section);
+    });
+  </script>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script> AOS.init(); </script>
+</body>
+
+</html>
